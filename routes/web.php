@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layout');
 });
+Route::get('/control-center', function () {
+    return view('control-center.index');
+});
+Route::get('/monitor', function () {
+    return view('monitor.index');
+});
