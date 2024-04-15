@@ -14,11 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout');
-});
-Route::get('/control-center', function () {
-    return view('control-center.index');
+    return view('start');
 });
 Route::get('/monitor', function () {
-    return view('monitor.index');
+    return view('frontend.monitor.index');
+});
+Route::get('/monitor/test', function () {
+    return view('frontend.monitor.test');
+})->name('monitor.test');
+Route::get('/monitor/alarm', function () {
+    return view('frontend.monitor.alarm');
+})->name('monitor.alarm');
+Route::get('/monitor/status', function () {
+    return view('frontend.monitor.status');
+})->name('monitor.status');
+
+// CMS Routes
+Route::name('cms.')->group(function() {
+   Route::resource('vehicles', \App\Http\Controllers\CMS\VehicleController::class);
 });

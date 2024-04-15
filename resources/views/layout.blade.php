@@ -15,9 +15,8 @@
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
 </head>
 <body>
-<div class="container">
-    <h1>Hello, world!</h1>
-    <button class="btn btn-success">Test</button>
+<div class="container py-4">
+    @yield('content')
 </div>
 
 
